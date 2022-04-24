@@ -1,6 +1,7 @@
 from flask import Blueprint, Flask, redirect, render_template, request
 
 from models.course import Course
+from models.member import Member
 import repositories.course_repository as course_repository
 
 
@@ -18,7 +19,7 @@ def courses():
 def show_course(id):
     booked_members = course_repository.select_members_booked_on_course(id)
     course = course_repository.select(id)
-    return render_template("courses/show.html", booked_member=booked_members, course=course)
+    return render_template("courses/show.html", booked_members=booked_members, course=course)
 
 
 # NEW

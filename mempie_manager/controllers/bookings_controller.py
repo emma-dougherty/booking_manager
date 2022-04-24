@@ -27,9 +27,13 @@ def new_booking():
 def create_booking():
     member_id = request.form["member_id"]
     course_id = request.form["course_id"]
+    child_first_name = request.form["child_first_name"]
+    child_last_name = request.form["child_last_name"]
+    child_age = request.form["child_age"]
+    special_requirements= request.form["special_requirements"]
     member = member_repository.select(member_id)
     course = course_repository.select(course_id)
-    new_booking = Booking(member, course)
+    new_booking = Booking(member, course, child_first_name, child_last_name, child_age, special_requirements)
     booking_repository.save(new_booking)
     return redirect("/bookings")
 
@@ -48,9 +52,13 @@ def edit_booking(id):
 def update_booking(id):
     member_id = request.form["member_id"]
     course_id = request.form["course_id"]
+    child_first_name = request.form["child_first_name"]
+    child_last_name = request.form["child_last_name"]
+    child_age = request.form["child_age"]
+    special_requirements= request.form["special_requirements"]
     member = member_repository.select(member_id)
     course = course_repository.select(course_id)
-    booking = Booking(member, course, id)
+    booking = Booking(member, course, child_first_name, child_last_name, child_age, special_requirements)
     booking_repository.update(booking)
     return redirect("/bookings")
 

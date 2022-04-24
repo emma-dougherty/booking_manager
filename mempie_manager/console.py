@@ -32,40 +32,22 @@ course_repository.save(course6)
 course7 = Course("Festive Fun", "10 - 11 December", "10am-3pm", "2 days", "8-12 yrs", "Studio 1", "Presents, puddings, Father Christmas, feasts, snowflakes, snowballs, snowmen (and more!) will all be putting in an appearance at this jolly holiday workshop.")
 course_repository.save(course7)
 
-# member1 = Member("Ray", "Harryhausen", 447488811034, "ray@gmail.com")
-# member_repository.save(member1)
-
-# member2 = Member("Adam", "Pesapane", 447700184665, "contact@pes.com")
-# member_repository.save(member2)
-
-# member3 = Member("Henry", "Selick", 447488810936, "skellington@mac.com")
-# member_repository.save(member3)
-
-# member4 = Member("Tim", "Burton", 447488811033, "tim@frankenweenie.com")
-# member_repository.save(member4)
-
-# member5 = Member("Nick", "Park", 447700184802, "cheeeeeese@aardman.com")
-# member_repository.save(member5)
-
-# member6 = Member("Kirsten", "Leopore", 447488810566, "kirstenl@hotmail.com")
-# member_repository.save(member6)
-
-member1 = Member("Ray", "Harryhausen", 22, "ray@gmail.com")
+member1 = Member("Ray", "Harryhausen", "07488811034", "ray@gmail.com")
 member_repository.save(member1)
 
-member2 = Member("Adam", "Pesapane", 3, "contact@pes.com")
+member2 = Member("Adam", "Pesapane", "07700184665", "contact@pes.com")
 member_repository.save(member2)
 
-member3 = Member("Henry", "Selick", 37, "skellington@mac.com")
+member3 = Member("Henry", "Selick", "07488810936", "skellington@mac.com")
 member_repository.save(member3)
 
-member4 = Member("Tim", "Burton", 8, "tim@frankenweenie.com")
+member4 = Member("Tim", "Burton", "07488811033", "tim@frankenweenie.com")
 member_repository.save(member4)
 
-member5 = Member("Nick", "Park", 8, "cheeeeeese@aardman.com")
+member5 = Member("Nick", "Park", "07700184802", "cheeeeeese@aardman.com")
 member_repository.save(member5)
 
-member6 = Member("Kirsten", "Leopore", 9, "kirstenl@hotmail.com")
+member6 = Member("Kirsten", "Leopore", "07488810566", "kirstenl@hotmail.com")
 member_repository.save(member6)
 
 booking1 = Booking(member1, course3, "Sophie", "Harryhausen", 9, "None")
