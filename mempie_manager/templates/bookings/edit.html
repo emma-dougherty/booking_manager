@@ -43,7 +43,10 @@
         </select>
     </div>
     <label for="special_requirements">Special Requirements:</label>
-    <input type="text" id="special_requirements" name="special_requirements" value="{{ booking.special_requirements }}">
+
+    <textarea name="special_requirements" cols="40" rows="5" id="special_requirements" placeholder="{{ booking.special_requirements }}"></textarea>
+
+
             {% for booking in bookings %}
             <option value="{{ member.id }}">
                 {{ booking.special_requirements }} 
@@ -51,9 +54,6 @@
             {% endfor %}
         </select>
     </div>
-
-
-
 
 
 
