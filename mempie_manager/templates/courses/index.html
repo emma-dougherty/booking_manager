@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Courses</h2>
+
+{% for course in courses %}
+
+<section>
+    <h3>{{ course.name }}</h3>
+    <p>{{ course.date }}</p>
+    <a href="/courses/{{ course.id }}/edit">Edit</a>
+    <form action="/courses/{{ course.id }}/delete" method="POST">
+        <input type="submit" value="Delete">
+    </form>
+    <a href="/courses/{{ course.id }}">Details</a>
+</section>
+
+{% endfor %}
+{% endblock %}

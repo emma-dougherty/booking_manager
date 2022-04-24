@@ -1,0 +1,9 @@
+<h2>{{ course.name }}</h2>
+
+
+<h3>Booked Members</h3>
+<ul>
+    {% for member in booked_members %}
+    <li>{{ member.first_name }}</li>
+    {% endfor %}
+</ul>

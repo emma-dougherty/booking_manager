@@ -23,9 +23,10 @@ CREATE TABLE members (
 
 CREATE TABLE bookings (
     id SERIAL PRIMARY KEY,
-    child_name VARCHAR (255),
+    member_id SERIAL REFERENCES members(id) ON DELETE CASCADE,
+    course_id SERIAL REFERENCES courses(id) ON DELETE CASCADE,
+    child_first_name VARCHAR (255),
+    child_last_name VARCHAR (255),
     child_age INT,
-    special_requirements TEXT,
-    member_id SERIAL REFERENCES members(id),
-    course_id SERIAL REFERENCES courses(id)
+    special_requirements TEXT
 );

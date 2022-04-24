@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Update a Member</h2>
+
+<form action="/members/{{ member.id }}" method="POST">
+    <div>
+        <label for="first_name">First name:</label>
+        <input type="text" id="first_name" name="first_name" value="{{ member.first_name }}">
+
+        <label for="last_name">Last name:</label>
+        <input type="text" id="last_name" name="last_name" value="{{ member.last_name }}">
+
+        <label for="phone">Phone number:</label>
+        <input type="number" id="phone" name="phone" value="{{ member.phone_number}}">
+
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email" value="{{ member.email}}">
+
+
+        <input type="submit">
+
+
+
+
+
+
+
+
+
+
+    </div>
+</form>
+
+{% endblock %}
