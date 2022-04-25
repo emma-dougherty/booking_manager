@@ -3,7 +3,7 @@
 
 <h2>Update a Booking</h2>
 
-<form action="/bookings/{{ booking.id }}" method="POST">
+<form action="/bookings/{{ booking.id }}" id="booking_form" method="POST">
     <div>
         <label for="member">Member:</label>
         <select name="member_id" id="member">
@@ -44,7 +44,7 @@
     </div>
     <label for="special_requirements">Special Requirements:</label>
 
-    <textarea name="special_requirements" cols="40" rows="5" id="special_requirements" placeholder="{{ booking.special_requirements }}"></textarea>
+    <textarea name="special_requirements" cols="40" rows="5" form="booking_form" id="special_requirements" >{{ booking.special_requirements }}</textarea>
 
 
             {% for booking in bookings %}

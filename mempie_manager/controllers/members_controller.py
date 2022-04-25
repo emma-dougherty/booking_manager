@@ -54,3 +54,10 @@ def update_member(id):
 def delete_member(id):
     member_repository.delete(id)
     return redirect("/members")
+
+# SHOW
+@members_blueprint.route("/members/<id>")
+def show_member(id):
+    booked_courses = member_repository.select_courses_booked_by_member(id)
+    member = member_repository.select(id)
+    return render_template("members/show.html", booked_courses=booked_courses, member=member)

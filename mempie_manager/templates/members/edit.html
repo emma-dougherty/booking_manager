@@ -3,23 +3,40 @@
 
 <h2>Update a Member</h2>
 
-<form action="/members/{{ member.id }}" method="POST">
+<form action="/members/{{ member.id }}" id="members_form" method="POST">
     <div>
         <label for="first_name">First name:</label>
-        <input type="text" id="first_name" name="first_name" value="{{ member.first_name }}">
+        <input type="text" id="first_name" name="first_name">
 
         <label for="last_name">Last name:</label>
-        <input type="text" id="last_name" name="last_name" value="{{ member.last_name }}">
+        <input type="text" id="last_name" name="last_name">
 
         <label for="phone">Phone number:</label>
-        <input type="text" id="phone" name="phone" value="{{ member.phone_number}}">
+        <input type="text" id="phone" name="phone">
 
         <label for="email">Email:</label>
-        <input type="text" id="email" name="email" value="{{ member.email}}">
-
-
+        <input type="text" id="email" name="email">
+        
         <input type="submit">
+<!-- 
+       
 
+        <form action="/members/{{ member.id }}" id="members_form" method="POST">
+            <div>
+                <label for="first_name">First name:</label>
+                <input type="text" id="first_name" name="first_name" value="{{ member.first_name }}" form="members_form">
+        
+                <label for="last_name">Last name:</label>
+                <input type="text" id="last_name" name="last_name" value="{{ member.last_name }}"form="members_form">
+        
+                <label for="phone">Phone number:</label>
+                <input type="text" id="phone" name="phone" value="{{ member.phone_number}}" form="members_form">
+        
+                <label for="email">Email:</label>
+                <input type="text" id="email" name="email" value="{{ member.email}}" form="members_form">
+        
+        
+                <input type="submit"> -->
 
 
 

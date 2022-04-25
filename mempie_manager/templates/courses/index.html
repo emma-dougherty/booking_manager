@@ -3,9 +3,13 @@
 
 <h2>Courses</h2>
 
+
+
 {% for course in courses %}
 
-<section>
+<div class="all_courses">
+    <div class="rows">
+        <div class="row">
     <h3><a href="/courses/{{ course.id }}">{{ course.name }} </a></h3>
     <p>{{ course.date }}</p>
     <a href="/courses/{{ course.id }}/edit">Edit</a>
@@ -15,6 +19,14 @@
  
 
 </section>
+
+</div>
+</div></div>
+</div>
+
+
+
+
 
 {% endfor %}
 {% endblock %}

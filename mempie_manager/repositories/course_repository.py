@@ -47,10 +47,22 @@ def update(course):
 
 def select_members_booked_on_course(id):
     booked_members = []
-    sql = "SELECT members.* FROM members INNER JOIN bookings ON bookings.member_id = member.id WHERE bookings.course_id = %s"
+    sql = "SELECT members.* FROM members INNER JOIN bookings ON bookings.member_id = members.id WHERE bookings.course_id = %s"
     values = [id]
     results = run_sql(sql, values)
     for result in results:
         member = Member(result["first_name"], result["last_name"], result["phone_number"], result["email"])
         booked_members.append(member)
     return booked_members
+
+# def select_members_booked_on_course(id):
+#     booked_members = []
+#     sql = "SELECT member.first_name, member.Last_name FROM members INNER JOIN bookings ON bookings.member_id = members.id INNER JOIN courses ON courses.id = bookings.course_id WHERE bookings.course_id = %s"
+#     values = [id]
+#     results = run_sql(sql, values)
+#     for result in results:
+#         member = Member(result["first_name"], result["last_name"], result["phone_number"], result["email"])
+#         booked_members.append(member)
+#     return booked_members
+
+

@@ -1,8 +1,10 @@
+/* 
+* {box-sizing: border-box;} */
+@import url(//db.onlinewebfonts.com/c/4fb2accf874593635afa99c122467fd6?family=MijaW03-Regular);
 
-* {box-sizing: border-box;}
 
 body { 
-    margin: 100px;
+
     font-family: 'Montserrat', sans-serif;
 }
 
@@ -13,7 +15,8 @@ body {
 }
 
 .menu {
-    display: inline;
+    /* display: inline; */
+    margin: 100px;
 }
 
 
@@ -28,11 +31,12 @@ body {
     border-radius: 4px;
 } */
 
-.logo >img {
+.logo > img {
     float: none;
     display: block;
     width: 100px;
     height: auto;
+    padding-left: 100px;
     background-repeat: none;
 
 }
@@ -41,7 +45,7 @@ body {
 
 } */
 
-.header a.active {
+/* .header a.active {
     background-color: #2CBE67;
     color: white;
 }
@@ -60,7 +64,7 @@ body {
 .header-left {
     float: none;
 }
-}
+} */
 
 .course_booking_details {
     display: inline
@@ -91,7 +95,7 @@ input, textarea {
 	-webkit-box-sizing: border-box; 
 	-moz-box-sizing: border-box;  
 	box-sizing: border-box;       
-	width: 100%;
+	width: 20%;
 }
 
 
@@ -104,9 +108,83 @@ input, textarea {
 
 
 }
+/* 
 .container{
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-evenly;
     width: 200px;
     margin: 0 auto;
 }
+.all_courses{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.rows {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 5px;
+ 
+    
+}
+
+.row   {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+} */
+
+.topnav {
+    background-color: #2CBE67;
+    overflow: hidden;
+
+}
+
+.topnav a {
+    float: left;
+    color: #ffffff;
+    text-align: center;
+    padding: 25px 50px;
+    text-decoration: none;
+    font-size: 20px;
+    
+}
+
+.topnav a:hover {
+    background-color: #27C566;
+    color: rgb(255, 255, 255);
+}
+
+.topnav a.active {
+    background-color: #2CBE67;
+    color: white;
+    padding-left: 100px
+}
+
+
+
+/* .btn-grad {background-image: linear-gradient(to right, #339840 0%, #47c86c  51%, #51de5f  100%)}
+.btn-grad {
+   margin: 10px;
+   padding: 15px 45px;
+   text-align: center;
+   text-transform: uppercase;
+   transition: 0.5s;
+   border-radius: 10px;
+   width: 200px;
+  background-size: 200% auto;
+   color: white;            
+    box-shadow: 0 0 20px #eee;
+   
+   display: block;
+ }
+
+ .btn-grad:hover {
+   background-position: right center; 
+   color: #fff;
+   text-decoration: none;
+ } */

@@ -1,5 +1,7 @@
 from db.run_sql import run_sql
 from models.member import Member
+from models.course import Course
+from models.booking import Booking
 
 def save(member):
     sql = "INSERT INTO members (first_name, last_name, phone_number, email) VALUES (%s, %s, %s, %s) RETURNING id"
@@ -43,5 +45,17 @@ def delete(id):
 
 def update(member):
     sql = "UPDATE members SET (first_name, last_name, phone_number, email) = (%s, %s, %s, %s) WHERE id = %s"
-    values = [member.first_name, member.last_name, member.phone_number, member.email]
+    values = [member.first_name, member.last_name, member.phone_number, member.email, member.id]
     run_sql(sql, values)
+
+def select_courses_booked_by_member(id):
+    booked_courses = []
+    sql = "SELECT courses.* FROM courses INNER JOIN bookings ON bookings.course_id = courses.id WHERE bookings.member_id = %s"
+    values = [id]
+    results = run_sql(sql, values)
+    for result in results:
+        course = Course(result["name"], result["date"], result["times"], result["duration"], result["age_range"], result["location"], result["description"])
+        booked_courses.append(course)
+    return booked_courses
+
+   # booking = Booking(result["member"], result["course"], result["child_first_name"], result["child_last_name"],result["special_requirements"])
