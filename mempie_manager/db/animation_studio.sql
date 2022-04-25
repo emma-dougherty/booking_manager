@@ -1,3 +1,4 @@
+DROP TABLE IF EXISTS waitinglist;
 DROP TABLE IF EXISTS bookings;
 DROP TABLE IF EXISTS courses;
 DROP TABLE IF EXISTS members;
@@ -9,6 +10,7 @@ CREATE TABLE courses (
     times VARCHAR (100),
     duration VARCHAR (100),
     age_range VARCHAR (100),
+    capacity INT,
     location VARCHAR (255),
     description TEXT 
 );
@@ -22,6 +24,16 @@ CREATE TABLE members (
 );
 
 CREATE TABLE bookings (
+    id SERIAL PRIMARY KEY,
+    member_id SERIAL REFERENCES members(id) ON DELETE CASCADE,
+    course_id SERIAL REFERENCES courses(id) ON DELETE CASCADE,
+    child_first_name VARCHAR (255),
+    child_last_name VARCHAR (255),
+    child_age INT,
+    special_requirements TEXT
+);
+
+CREATE TABLE waitinglist (
     id SERIAL PRIMARY KEY,
     member_id SERIAL REFERENCES members(id) ON DELETE CASCADE,
     course_id SERIAL REFERENCES courses(id) ON DELETE CASCADE,

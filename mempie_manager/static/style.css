@@ -1,11 +1,11 @@
 /* 
 * {box-sizing: border-box;} */
 @import url(//db.onlinewebfonts.com/c/4fb2accf874593635afa99c122467fd6?family=MijaW03-Regular);
-
+@font-face {font-family: "MijaW03-Regular"; src: url("//db.onlinewebfonts.com/t/4fb2accf874593635afa99c122467fd6.eot"); src: url("//db.onlinewebfonts.com/t/4fb2accf874593635afa99c122467fd6.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/4fb2accf874593635afa99c122467fd6.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/4fb2accf874593635afa99c122467fd6.woff") format("woff"), url("//db.onlinewebfonts.com/t/4fb2accf874593635afa99c122467fd6.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/4fb2accf874593635afa99c122467fd6.svg#MijaW03-Regular") format("svg"); }
 
 body { 
 
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'MijaW03-Regular', sans-serif;
 }
 
 .header {
@@ -98,9 +98,11 @@ input, textarea {
 	width: 20%;
 }
 
+.input-wrapper {
+    position: relative;
+}
 
-#description
-{
+#description {
     height:200px;
     width: 200px;
     font-size:14pt;
@@ -188,3 +190,125 @@ input, textarea {
    color: #fff;
    text-decoration: none;
  } */
+
+
+.input-wrapper {
+    position: relative;
+}
+    
+      /* <!-- // Make the pseduo element stretch to the full width and
+      // height of `.input-wrapper` --> */
+    
+.input-wrapper label::after {
+        content: "";
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+    }
+    
+      /* <!-- // Ensure the input isn't accidentally blocked by clicks 
+      // on the pseudo element --> */
+.input-wrapper input {
+        position: relative;
+        z-index: 2;
+    }
+    
+    
+    label {
+        color: #000000;
+        display: block;
+        letter-spacing: 0.015em;
+        padding-bottom: 0.25em;
+        padding-left: 0.25em;
+    }
+    
+    .input-hint {
+        display: block;
+        color: #4a4a4a;
+        font-size: 70%;
+        line-height: 1.4;
+        margin-top: 0.15em;
+        padding-left: 0.25em;
+    }
+    
+    input {
+        background: #ffffff;
+        background: linear-gradient(0deg, #ffffff 93%, #e0e0e0 100%); 
+        border: 1px solid #999999;
+        border-radius: 0.3em;
+        display: block;
+        line-height: 1;
+        padding: 0.75em 0.75em 0.6em 0.75em;
+        width: 100%;
+    
+    }
+    .input:hover,
+    input:active {
+        border-color: darken(#999999, 15%);
+    }
+    
+    .input:focus {
+        box-shadow:
+        0 0 0 2px #ffffff,
+        0 0 0 5px #d33a2c;
+        outline: none;
+    }
+    
+    
+    
+    
+    
+
+    *, 
+    *::before, 
+    *::after {
+        box-sizing: border-box; 
+    }
+    
+    html {
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 20px;
+    }
+    
+    /* body {
+        background-color: #ffffff;
+        color: #666666;
+        margin: 5em;
+    }
+     */
+    main {
+        background-color: #ffffff;
+        border-radius: 0.5em;
+        padding: 1em;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 95vw;
+    
+      /* <!-- // Media Queries --> */
+    @media screen and (min-width: 35em) {
+        padding: 2em;
+        width: 75vw;
+    }
+    }
+    
+    samp {
+        background-color: #ededed;
+        border: 2px solid #ededed;
+        border-radius: 0.2em;
+        margin-left: 0.15em;
+        margin-right: 0.05em;
+        padding-left: 0.25em;
+        padding-right: 0.25em;
+        speak: digits;
+        word-break: break-word;
+    }
+    
+    abbr[title] {
+        text-decoration: none;
+    }
+    
+    

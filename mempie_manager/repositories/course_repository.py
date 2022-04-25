@@ -3,8 +3,8 @@ from models.member import Member
 from models.course import Course
 
 def save(course):
-    sql = "INSERT INTO courses (name, date, times, duration, age_range, location, description) VALUES (%s, %s, %s, %s, %s, %s, %s) RETURNING id"
-    values = [course.name, course.date, course.times, course.duration, course.age_range, course.location, course.description]
+    sql = "INSERT INTO courses (name, date, times, duration, age_range, capacity, location, description) VALUES (%s, %s, %s, %s, %s, %s, %s, %s) RETURNING id"
+    values = [course.name, course.date, course.times, course.duration, course.age_range, course.capacity, course.location, course.description]
     results = run_sql(sql, values)
     id = results[0]['id']
     course.id = id
@@ -15,7 +15,7 @@ def select_all():
     sql = "SELECT * FROM courses"
     results = run_sql(sql)
     for result in results:
-        course = Course(result["name"], result["date"], result["times"], result["duration"], result["age_range"], result["location"], result["description"],result["id"])
+        course = Course(result["name"], result["date"], result["times"], result["duration"], result["age_range"], result["capacity"],result["location"], result["description"],result["id"])
         courses.append(course)
     return courses
 
@@ -24,7 +24,7 @@ def select(id):
     sql = "SELECT * FROM courses WHERE id = %s"
     values = [id]
     result = run_sql(sql, values)[0]
-    course = Course(result["name"], result["date"], result["times"], result["duration"], result["age_range"], result["location"], result["description"],result["id"])
+    course = Course(result["name"], result["date"], result["times"], result["duration"], result["age_range"], result["capacity"], result["location"], result["description"],result["id"])
     return course
 
 
@@ -40,8 +40,8 @@ def delete(id):
 
 
 def update(course):
-    sql = "UPDATE courses SET (name, date, times, duration, age_range, location, description) = (%s, %s, %s, %s, %s, %s, %s) WHERE id = %s"
-    values = [course.name, course.date, course.times, course.duration, course.age_range, course.location, course.description]
+    sql = "UPDATE courses SET (name, date, times, duration, age_range, capacity, location, description) = (%s, %s, %s, %s, %s, %s, %s, %s) WHERE id = %s"
+    values = [course.name, course.date, course.times, course.duration, course.age_range, course.capacity, course.location, course.description]
     run_sql(sql, values)
 
 
@@ -51,18 +51,16 @@ def select_members_booked_on_course(id):
     values = [id]
     results = run_sql(sql, values)
     for result in results:
-        member = Member(result["first_name"], result["last_name"], result["phone_number"], result["email"])
+        member = Member(result["first_name"], result["last_name"], result["phone_number"], result["email"], result["id"])
         booked_members.append(member)
     return booked_members
 
-# def select_members_booked_on_course(id):
-#     booked_members = []
-#     sql = "SELECT member.first_name, member.Last_name FROM members INNER JOIN bookings ON bookings.member_id = members.id INNER JOIN courses ON courses.id = bookings.course_id WHERE bookings.course_id = %s"
-#     values = [id]
-#     results = run_sql(sql, values)
-#     for result in results:
-#         member = Member(result["first_name"], result["last_name"], result["phone_number"], result["email"])
-#         booked_members.append(member)
-#     return booked_members
-
-
+def number_booked(id):
+    booked_members = []
+    sql = "SELECT members.* FROM members INNER JOIN bookings ON bookings.member_id = members.id WHERE bookings.course_id = %s"
+    values = [id]
+    results = run_sql(sql, values)
+    for result in results:
+        member = Member(result["first_name"], result["last_name"], result["phone_number"], result["email"])
+        booked_members.append(member)
+    return len(booked_members)

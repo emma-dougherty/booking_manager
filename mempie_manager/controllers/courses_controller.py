@@ -3,6 +3,8 @@ from flask import Blueprint, Flask, redirect, render_template, request
 from models.course import Course
 from models.member import Member
 import repositories.course_repository as course_repository
+import repositories.booking_repository as booking_repository
+
 
 
 courses_blueprint = Blueprint("courses", __name__)
@@ -18,8 +20,15 @@ def courses():
 @courses_blueprint.route("/courses/<id>")
 def show_course(id):
     booked_members = course_repository.select_members_booked_on_course(id)
+    number_booked = course_repository.number_booked(id)
     course = course_repository.select(id)
-    return render_template("courses/show.html", booked_members=booked_members, course=course)
+    all_bookings = booking_repository.select_all()
+    course_bookings = []
+    for booking in all_bookings:
+        if booking.course.id == int(id):
+            course_bookings.append(booking)
+    print(course_bookings)
+    return render_template("courses/show.html", booked_members=booked_members, number_booked=number_booked, course=course, course_bookings=course_bookings)
 
 
 # NEW
@@ -36,9 +45,10 @@ def create_course():
     times = request.form["times"]
     duration = request.form["duration"]
     age_range = request.form["age_range"]
+    capacity = request.form["capacity"]
     location = request.form["location"]
     description = request.form["description"]
-    new_course = Course(name, date, times, duration, age_range, location, description)
+    new_course = Course(name, date, times, duration, age_range, capacity, location, description)
     course_repository.save(new_course)
     return redirect("/courses")
 

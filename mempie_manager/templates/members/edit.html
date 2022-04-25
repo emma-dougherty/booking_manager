@@ -2,13 +2,21 @@
 {% block content %}
 
 <h2>Update a Member</h2>
+<div class="input-wrapper">
 
 <form action="/members/{{ member.id }}" id="members_form" method="POST">
     <div>
+    
         <label for="first_name">First name:</label>
+        <p id="first_name-hint"
+        class="input-hint">Previous: {{member.first_name}}
+        </p>
+
         <input type="text" id="first_name" name="first_name">
 
         <label for="last_name">Last name:</label>
+        <p id="last_name-hint"
+        class="input-hint">Previous: {{member.last_name}}</p>
         <input type="text" id="last_name" name="last_name">
 
         <label for="phone">Phone number:</label>
@@ -16,10 +24,18 @@
 
         <label for="email">Email:</label>
         <input type="text" id="email" name="email">
-        
+
         <input type="submit">
+
+
+    </div>
+
+
+
+
+
 <!-- 
-       
+
 
         <form action="/members/{{ member.id }}" id="members_form" method="POST">
             <div>

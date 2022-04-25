@@ -5,9 +5,17 @@
     <span>
         <h3>{{course.date}}</h3>
         <h3>{{course.duratation}}
+            
     </span>  
         {{course.age_range}}</h3>
-        <p>{{course.description}}</p>
+       {{number_booked}} / {{course.capacity}}
+        <p>{{course.description}}
+
+    
+        
+        
+        </p>
+    
     </span>
 
 
@@ -17,6 +25,12 @@
 <ul>
     {% for member in booked_members %}
     <li>{{ member.first_name }} {{member.last_name }}</li>
+    <p>Children</p>
+        {% for booking in course_bookings %} 
+            {% if booking.member.id == member.id %}
+            {{ booking.child_first_name }}  {{booking.child_last_name}}
+            {% endif %}
+        {% endfor %}
     {% endfor %}
 </ul>
 

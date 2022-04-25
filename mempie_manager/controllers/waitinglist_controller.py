@@ -8,26 +8,26 @@ import repositories.course_repository as course_repository
 import repositories.waitinglist_repository as waitinglist_repository
 
 
-bookings_blueprint = Blueprint("bookings", __name__)
+waitinglists_blueprint = Blueprint("waitinglists", __name__)
 
 # INDEX
-@bookings_blueprint.route("/bookings")
-def bookings():
-    bookings = booking_repository.select_all()
-    return render_template("bookings/index.html", bookings=bookings)
+@waitinglists_blueprint.route("/waitinglists")
+def waitinglists():
+    waitinglists = waitinglist_repository.select_all()
+    return render_template("waitinglists/index.html", waitinglists=waitinglists)
 
 
 # NEW
-@bookings_blueprint.route("/bookings/new")
-def new_booking():
+@waitinglists_blueprint.route("/waitinglists/new")
+def new_waiting():
     members = member_repository.select_all()
     courses = course_repository.select_all()
-    return render_template("bookings/new.html", members=members, courses=courses)
+    return render_template("waitinglists/new.html", members=members, courses=courses)
 
 
 # CREATE
-@bookings_blueprint.route("/bookings", methods=["POST"])
-def create_booking():
+@waitinglists_blueprint.route("/waitinglists", methods=["POST"])
+def create_waitinglist():
     member_id = request.form["member_id"]
     course_id = request.form["course_id"]
     child_first_name = request.form["child_first_name"]
@@ -36,29 +36,24 @@ def create_booking():
     special_requirements= request.form["special_requirements"]
     member = member_repository.select(member_id)
     course = course_repository.select(course_id)
-    num_on_course = course_repository.number_booked(course_id)
-    if num_on_course < course.capacity:
+    num_on_course = course.number_booked()
+    if num_on_course > course.capacity:
         new_booking = Booking(member, course, child_first_name, child_last_name, child_age, special_requirements)
         booking_repository.save(new_booking)
         return redirect("/bookings")
-    if num_on_course >= course.capacity:
-        new_waitinglist = WaitingList(member, course, child_first_name, child_last_name, child_age, special_requirements)
-        waitinglist_repository.save(new_waitinglist)
-        attempted_booking_list = waitinglist_repository.select_all()
-        return render_template("/waitinglists/index.html", waitinglists=attempted_booking_list)
 
 
 # EDIT
-@bookings_blueprint.route("/bookings/<id>/edit")
+@waitinglists_blueprint.route("/waitinglists/<id>/edit")
 def edit_booking(id):
     booking = booking_repository.select(id)
     members = member_repository.select_all()
     courses = course_repository.select_all()
-    return render_template('bookings/edit.html', booking=booking, members=members, courses=courses)
+    return render_template('waitinglists/edit.html', booking=booking, members=members, courses=courses)
 
 
 # UPDATE
-@bookings_blueprint.route("/bookings/<id>", methods=["POST"])
+@waitinglists_blueprint.route("/waitinglists/<id>", methods=["POST"])
 def update_booking(id):
     member_id = request.form["member_id"]
     course_id = request.form["course_id"]
@@ -70,11 +65,11 @@ def update_booking(id):
     course = course_repository.select(course_id)
     booking = Booking(member, course, child_first_name, child_last_name, child_age, special_requirements)
     booking_repository.update(booking)
-    return redirect("/bookings")
+    return redirect("/waitinglists")
 
 
 # DELETE
-@bookings_blueprint.route("/bookings/<id>/delete", methods=["POST"])
+@waitinglists_blueprint.route("/waitinglists/<id>/delete", methods=["POST"])
 def delete_booking(id):
     booking_repository.delete(id)
-    return redirect("/bookings")
+    return redirect("/waitinglists")

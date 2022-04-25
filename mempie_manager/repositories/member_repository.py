@@ -54,7 +54,7 @@ def select_courses_booked_by_member(id):
     values = [id]
     results = run_sql(sql, values)
     for result in results:
-        course = Course(result["name"], result["date"], result["times"], result["duration"], result["age_range"], result["location"], result["description"])
+        course = Course(result["name"], result["date"], result["times"], result["duration"], result["age_range"], result["capacity"], result["location"], result["description"])
         booked_courses.append(course)
     return booked_courses
 

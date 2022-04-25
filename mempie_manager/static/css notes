@@ -1,0 +1,146 @@
+global-header header - grid
+
+main-nav
+
+main-nav_primary
+
+<li class="nav-item nav-item-1 nav-item--active"><a data-instant="" class="nav-item-link" href="/articles/">Articles</a></li>
+
+
+.input-wrapper {
+position: relative;
+
+  <!-- // Make the pseduo element stretch to the full width and
+  // height of `.input-wrapper` -->
+
+& label::after {
+    content: "";
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+  <!-- // Ensure the input isn't accidentally blocked by clicks 
+  // on the pseudo element -->
+& input {
+    position: relative;
+    z-index: 2;
+}
+}
+
+label {
+    color: #4a4a4a;
+    display: block;
+    letter-spacing: 0.015em;
+    padding-bottom: 0.25em;
+    padding-left: 0.25em;
+}
+
+.input-hint {
+    display: block;
+    font-size: 80%;
+    line-height: 1.4;
+    margin-top: 0.15em;
+    padding-left: 0.25em;
+}
+
+input {
+    background: #ffffff;
+    background: linear-gradient(0deg, #ffffff 93%, #e0e0e0 100%); 
+    border: 1px solid #999999;
+    border-radius: 0.3em;
+    display: block;
+    line-height: 1;
+    padding: 0.75em 0.75em 0.6em 0.75em;
+    width: 100%;
+
+  <!-- // States -->
+&:hover,
+&:active {
+    border-color: darken(#999999, 15%);
+}
+
+&:focus {
+    box-shadow:
+    0 0 0 2px #ffffff,
+    0 0 0 5px #d33a2c;
+    outline: none;
+}
+}
+
+
+
+
+<!-- // Demo setup -->
+*, 
+*::before, 
+*::after {
+    box-sizing: border-box; 
+}
+
+html {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 20px;
+}
+
+body {
+    background-color: #bc3428;
+    color: #666666;
+    margin: 5em;
+}
+
+main {
+    background-color: #ffffff;
+    border-radius: 0.5em;
+    padding: 1em;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 95vw;
+
+  <!-- // Media Queries -->
+@media screen and (min-width: 35em) {
+    padding: 2em;
+    width: 75vw;
+}
+}
+
+samp {
+    background-color: #ededed;
+    border: 2px solid #ededed;
+    border-radius: 0.2em;
+    margin-left: 0.15em;
+    margin-right: 0.05em;
+    padding-left: 0.25em;
+    padding-right: 0.25em;
+    speak: digits;
+    word-break: break-word;
+}
+
+abbr[title] {
+    text-decoration: none;
+}
+
+
+<main>
+    <div class="input-wrapper">
+      <form id="example" action="">
+        <label for="employee-id">
+          Your employee <abbr title="Identification">ID</abbr> number
+        </label>
+        <p 
+          id="employee-id-hint"
+          class="input-hint">
+          Can be found on your employee intranet profile. Example: <samp>a1234567-89</samp>.
+        </p>
+        <input 
+          id="employee-id" 
+          aria-describedby="employee-id-hint" 
+          name="id-number"
+          type="text" />
+      </form>
+    </div>
+  </main>

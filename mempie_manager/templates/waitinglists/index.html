@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Waiting Lists</h2>
+
+{% for member in waitinglists %}
+
+<section>
+
+    <p>{{ member.member.first_name }} {{ member.course.name }}</p>
+
+</section>
+
+{% endfor %}
+{% endblock %}
