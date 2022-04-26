@@ -108,7 +108,7 @@ input, textarea {
     overflow: hidden;
 
 }
-
+/* 
 .topnav a {
     float: left;
     color: #ffffff;
@@ -129,8 +129,8 @@ input, textarea {
     background-color: #2CBE67;
     color: white;
     padding-left: 100px
-}
-
+} */
+/* 
 .main-nav {
     position: relative;
     display: block;
@@ -138,10 +138,10 @@ input, textarea {
     color: #fff;
     grid-column: span 2;
     font-size: 1.05em;
-}
+} */
 
 /* @media (min-width: 53.125em) */
-
+/* 
 .main-nav__primary {
     justify-content: space-between;
 }
@@ -165,8 +165,8 @@ input, textarea {
     color: #fff;
     text-shadow: 1px 1px 1px rgb(0 0 0 / 25%);
     text-decoration: none;
-}
-
+} */
+/* 
 .nav-item {
     flex-grow: 0;
     background: 0 0;
@@ -177,7 +177,7 @@ input, textarea {
     align-items: center;
     margin-bottom: 0;
     padding-left: 0;
-}
+} */
 
 /* .btn-grad {background-image: linear-gradient(to right, #339840 0%, #47c86c  51%, #51de5f  100%)}
 .btn-grad {

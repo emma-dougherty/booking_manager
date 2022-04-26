@@ -9,6 +9,7 @@ def save(member):
     results = run_sql(sql, values)
     id = results[0]['id']
     member.id = id
+    return member
 
 
 def select_all():

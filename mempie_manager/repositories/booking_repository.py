@@ -12,6 +12,7 @@ def save(booking):
     results = run_sql(sql, values)
     id = results[0]['id']
     booking.id = id
+    return booking
 
 
 def select_all():

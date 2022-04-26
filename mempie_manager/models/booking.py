@@ -8,7 +8,3 @@ class Booking:
         self.special_requirements = special_requirements
         self.id = id
 
-    def book_if_space(self, guests):
-        if self.free_spaces() >= len(guests):
-            for guest in guests:
-                self.check_in_guest(guest)

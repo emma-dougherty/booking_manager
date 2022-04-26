@@ -8,6 +8,7 @@ def save(course):
     results = run_sql(sql, values)
     id = results[0]['id']
     course.id = id
+    return course
 
 
 def select_all():
