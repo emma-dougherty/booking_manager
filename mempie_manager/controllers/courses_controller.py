@@ -1,4 +1,5 @@
 from flask import Blueprint, Flask, redirect, render_template, request
+from forms import SearchForm
 
 from models.course import Course
 from models.member import Member
@@ -80,3 +81,12 @@ def update_course(id):
 def delete_course(id):
     course_repository.delete(id)
     return redirect("/courses")
+
+@courses_blueprint('/search', methods=['GET', 'POST'])
+def search():
+    form = SearchForm()
+    if request.method == 'POST' and form.validate_on_submit():
+        return redirect((url_for('search_results', query=form.search.data)))  # or what you want
+    return render_template('search.html', form=form)
+
+    
