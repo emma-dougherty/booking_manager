@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Membership Types</h2>
+
+{% for membership_type in membership_types %}
+
+<section>
+    <p> <a href="/memberships/{{ membership_type.id }}">{{ membership_type.name }}</a></p>
+
+    <p>{{ membership_type.benefits }}</p>
+    <a href="/memberships/{{ membership_type.id }}/edit">Edit</a>
+    <form action="/memberships/{{ membership_type.id }}/delete" method="POST">
+        <input type="submit" value="Delete">
+
+    
+    </form>
+</section>
+
+{% endfor %}
+{% endblock %}

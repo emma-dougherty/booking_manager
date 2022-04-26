@@ -13,6 +13,9 @@ CREATE TABLE courses (
     capacity INT,
     location VARCHAR (255),
     description TEXT 
+<<<<<<< HEAD
+=======
+
 );
 
 CREATE TABLE members (

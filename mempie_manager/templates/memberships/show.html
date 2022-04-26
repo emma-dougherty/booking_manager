@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+<h1>{{ membership_type.name }} </h1>
+
+<h3>Members</h3>
+
+
+<ul>
+    {% for member in members_with_selected_membership %}
+    <li>{{ member.first_name }} {{member.last_name }}</li>
+    
+    {% endfor %}
+</ul>
+
+{% endblock %}

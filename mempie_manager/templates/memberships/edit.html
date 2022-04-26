@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Update a Membership Type</h2>
+<div class="input-wrapper">
+
+<form action="/memberships/{{ membership_type.id }}" id="membership_type_form" method="POST">
+
+    
+        <label for="name">Membership Name:</label>
+
+        <input type="text" id="name" name="name" value={{membership_type.name}}> 
+
+        <label for="benefits">Benefits:</label>
+    
+        <input type="text" id="benefits" name="benefits" value={{membership_type.benefits}}>
+
+
+        <input type="submit">
+
+
+    </div>
+
+{% endblock %}
