@@ -6,319 +6,115 @@
 body { 
 
     font-family: 'MijaW03-Regular', sans-serif;
+    color:rgb(0, 0, 0)
 }
 
 .header {
     overflow: hidden;
     background-color: #2CBE67;
-    padding: 20px 10px;
+    padding: 20px 10px 40px 10px;
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    font-family: sans-serif;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+a {
+    text-decoration: none;
+}
+li {
+    list-style: none;
+}
+
+.brand {
+    width: auto;
+    height: 100%;
+    float: left;
+    margin: 0 0 0 5%;
 }
 
 .menu {
-    /* display: inline; */
-    margin: 100px;
-}
-
-.logo > img {
-    float: none;
-    display: block;
-    width: 100px;
-    height: auto;
-    padding-left: 100px;
-    background-repeat: none;
-
-}
-
-.course_booking_details {
-    display: inline
-}
-
-.buttons {
-    margin-top: 10px;
-    margin-left: 2px;
-    font-size: 1.4em;
-    color: #aab8c2;
-}
-
-.buttons i {
-    width: 80px;
-}
-
-input, select, button {
-    font-size: 100%;
-    width : 100%;
-    padding: 10px;
-    margin: 10px;
-    box-sizing: border-box;
-}
-
-input, textarea {
-	font-family: 'Monserrat', sans-serif;
-	font-size: 13px;
-	-webkit-box-sizing: border-box; 
-	-moz-box-sizing: border-box;  
-	box-sizing: border-box;       
-	width: 20%;
-}
-
-.input-wrapper {
-    position: relative;
-}
-
-#description {
-    height:200px;
-    width: 200px;
-    font-size:14pt;
-    word-break: break-word;
-
-
-}
-/* 
-.container{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    width: 200px;
-    margin: 0 auto;
-}
-.all_courses{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-}
-
-.rows {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    padding: 5px;
- 
-    
-}
-
-.row   {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-
-} */
-
-.topnav {
-    background-color: #2CBE67;
-    overflow: hidden;
-
-}
-/* 
-.topnav a {
-    float: left;
-    color: #ffffff;
-    text-align: center;
-    padding: 10px 50px;
-    text-decoration: none;
-    font-size: 20px;
-    
-}
-
-.topnav a:hover {
-    background-color: #27C566;
-    color: rgb(255, 255, 255);
-  
-}
-
-.topnav a.active {
-    background-color: #2CBE67;
-    color: white;
-    padding-left: 100px
-} */
-/* 
-.main-nav {
-    position: relative;
-    display: block;
-    min-width: 0;
-    color: #fff;
-    grid-column: span 2;
-    font-size: 1.05em;
-} */
-
-/* @media (min-width: 53.125em) */
-/* 
-.main-nav__primary {
-    justify-content: space-between;
-}
-
-.main-nav__primary {
-    display: flex;
-    list-style: none;
-    padding: 0.4em 0;
-    margin: 0;
-    flex-wrap: nowrap;
-    width: 100%;
+    width: 40%;
     height: 100%;
-    flex-shrink: 1;
-    min-width: 0;
-    justify-content: flex-start;
+    float: left;
+    padding-left: 50px;
+    font-size: 20px;
+    /* font-size: 1.05em;
+     */
 }
-
-.nav-item-link {
-    padding: 0.35em 0.9rem;
-    background: 0 0;
+.menu ul {
+    width: 100%;
+    height: inherit;
+    margin: 0;
+    padding: 0;
+    display: flex;             
+}
+.menu ul a {
+    width: 20%;
+    height: inherit;
+    color: rgb(255, 255, 255);
+    display: inline-block;
+}
+.menu ul a:hover {
+    background-color: #2bb060;
     color: #fff;
-    text-shadow: 1px 1px 1px rgb(0 0 0 / 25%);
-    text-decoration: none;
-} */
-/* 
-.nav-item {
-    flex-grow: 0;
-    background: 0 0;
-    text-shadow: none;
-    color: inherit;
-    font-weight: 700;
-    display: flex;
-    align-items: center;
-    margin-bottom: 0;
-    padding-left: 0;
-} */
-
-/* .btn-grad {background-image: linear-gradient(to right, #339840 0%, #47c86c  51%, #51de5f  100%)}
-.btn-grad {
-   margin: 10px;
-   padding: 15px 45px;
-   text-align: center;
-   text-transform: uppercase;
-   transition: 0.5s;
-   border-radius: 10px;
-   width: 200px;
-  background-size: 200% auto;
-   color: white;            
-    box-shadow: 0 0 20px #eee;
-   
-   display: block;
- }
-
- .btn-grad:hover {
-   background-position: right center; 
-   color: #fff;
-   text-decoration: none;
- } */
-
-
-.input-wrapper {
-    position: relative;
+    border-radius: 10px 10px 10px 10px;
 }
-    
-      /* <!-- // Make the pseduo element stretch to the full width and
-      // height of `.input-wrapper` --> */
-    
-.input-wrapper label::after {
-        content: "";
-        height: 100%;
+#menuToggle {
+    display: none;
+}
+.menu-icon {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    .menu {
+        width: 100%;
+        height: auto;
+    }
+    .menu ul {
+        display: block;
+        max-height: 0;
+        overflow: hidden;
+        -webkit-transition: max-height 0.3s;
+        -moz-transition: max-height 0.3s;
+        -ms-transition: max-height 0.3s;
+        -o-transition: max-height 0.3s;
+        transition: max-height 0.3s;
+
+    }
+    .menu ul a {
+        text-align: left;
+        width: 100%;
+        height: 50px;
+        background-color: #f1c40f;
+        padding: 10px 0px 10px 5%;
+    }
+    .menu-icon {
+        width: 100px;
+        height: inherit;
+        display: block;
         position: absolute;
         top: 0;
-        left: 0;
-        width: 100%;
+        right: 0;
+        line-height: 60px;
     }
-    
-      /* <!-- // Ensure the input isn't accidentally blocked by clicks 
-      // on the pseudo element --> */
-.input-wrapper input {
-        position: relative;
-        z-index: 2;
+    #menuToggle:checked ~ ul {
+        max-height: 350px;
+        /*Para fazer com que o menu saia da esquerda ou direita, você deve trocar max-height por max-width*/
     }
-    
-    
-    label {
-        color: #000000;
-        display: block;
-        letter-spacing: 0.015em;
-        padding-bottom: 0.25em;
-        padding-left: 0.25em;
+    .menu-icon i {
+        font-size: 1.7em;
     }
-    
-    .input-hint {
-        display: block;
-        color: #4a4a4a;
-        font-size: 70%;
-        line-height: 1.4;
-        margin-top: 0.15em;
-        padding-left: 0.25em;
-    }
-    
-    input {
-        background: #ffffff;
-        background: linear-gradient(0deg, #ffffff 93%, #e0e0e0 100%); 
-        border: 1px solid #999999;
-        border-radius: 0.3em;
-        display: block;
-        line-height: 1;
-        padding: 0.75em 0.75em 0.6em 0.75em;
-        width: 100%;
-    
-    }
-    .input:hover,
-    input:active {
-        border-color: darken(#999999, 15%);
-    }
-    
-    .input:focus {
-        box-shadow:
-        0 0 0 2px #ffffff,
-        0 0 0 5px #d33a2c;
-        outline: none;
-    }
-    
-    
-    
-    
-    
+}
 
-    *, 
-    *::before, 
-    *::after {
-        box-sizing: border-box; 
-    }
-    
-    html {
-        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-        font-size: 20px;
-    }
-    
-    /* body {
-        background-color: #ffffff;
-        color: #666666;
-        margin: 5em;
-    }
-     */
-    main {
-        background-color: #ffffff;
-        border-radius: 0.5em;
-        padding: 1em;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 95vw;
-    
-      /* <!-- // Media Queries --> */
-    @media screen and (min-width: 35em) {
-        padding: 2em;
-        width: 75vw;
-    }
-    }
-    
-    samp {
-        background-color: #ededed;
-        border: 2px solid #ededed;
-        border-radius: 0.2em;
-        margin-left: 0.15em;
-        margin-right: 0.05em;
-        padding-left: 0.25em;
-        padding-right: 0.25em;
-        speak: digits;
-        word-break: break-word;
-    }
-    
-    abbr[title] {
-        text-decoration: none;
-    }
-    
-    
+.container{
+    display: grid;
+}

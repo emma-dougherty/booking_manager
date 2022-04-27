@@ -1,5 +1,5 @@
 class Course:
-    def __init__(self, name, date, times, duration, age_range, capacity, location, description, peak_off_peak, id=None):
+    def __init__(self, name, date, times, duration, age_range, capacity, location, description, id=None):
         self.name = name
         self.date = date
         self.times = times
@@ -8,5 +8,4 @@ class Course:
         self.capacity = capacity
         self.location = location
         self.description = description
-        self.peak_off_peak = peak_off_peak
         self.id = id
