@@ -23,11 +23,6 @@ CREATE TABLE members (
     email VARCHAR (255)
 );
 
-CREATE TABLE membership_types (
-    id SERIAL PRIMARY KEY,
-    name VARCHAR(255)
-);
-
 
 CREATE TABLE bookings (
     id SERIAL PRIMARY KEY,
