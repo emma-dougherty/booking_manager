@@ -37,7 +37,7 @@ def delete_all():
 
 
 def delete(id):
-    sql = "DELETE FROM zombies WHERE id = %s"
+    sql = "DELETE FROM courses WHERE id = %s"
     values = [id]
     run_sql(sql, values)
 

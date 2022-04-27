@@ -215,15 +215,8 @@ li {
 .Rtable--5cols > .Rtable-cell  { width: 20%; }
 .Rtable--6cols > .Rtable-cell  { width: 16.6%; }
 
-body {
-    height:100vh;
-    width:100vw;
-    background-color:rgb(19, 20, 22);
-    overflow:hidden;
-    font-family: Lato, "Trebuchet MS", "Verdana", "sans-serif";
-  }
-  
-  #testbutton {
+
+#testbutton {
     width: 150px;
     height:50px;
     border-radius:180px;

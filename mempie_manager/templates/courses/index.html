@@ -11,18 +11,24 @@
 
   <div class="Rtable-cell">
     <a href="/courses/{{ course.id }}">{{ course.name }} </a>
+    
   </div>
   <div class="Rtable-cell">
     {{ course.date }}
   </div>
-  <div class="Rtable-cell">    
-    <a href="/courses/{{ course.id }}/edit">Edit</a>
-  </div>
-  <div class="Rtable-cell"> 
-    <form action="/courses/{{ course.id }}/delete" method="POST">
-    <input type="submit" value="Delete">
-    </form>
-  </div>
+
+  <div class="Rtable-cell">
+    <a href="/courses/{{ course.id }}/edit"><i class="fa fa-edit fa-2x" style="color:#949494" aria-hidden="true"></i></a>
+</div>
+
+
+<div class="Rtable-cell"> 
+  <form class = "delete-form" action = "/courses/{{ course.id }}/delete" method = "POST">
+  <button class="trash-button">
+      <i class="fa fa-trash-o fa-2x" style="color:#949494" aria-hidden="true"></i>
+  </button>
+  </form>
+</div>
 
 </section>
 
