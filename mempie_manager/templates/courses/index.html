@@ -1,31 +1,26 @@
+
+
 {% extends "base.html" %}
 {% block content %}
 
 <h2>Courses</h2>
-
-
+<li><a href="/courses/new">Add</a></li>
 
 {% for course in courses %}
+<section class="course-grid">
 
-<div class="all_courses">
-    <div class="rows">
-        <div class="row">
-    <h3><a href="/courses/{{ course.id }}">{{ course.name }} </a></h3>
-    <p>{{ course.date }}</p>
-    <a href="/courses/{{ course.id }}/edit">Edit</a>
-    <form action="/courses/{{ course.id }}/delete" method="POST">
-        <input type="submit" value="Delete">
-    </form>
- 
+<div class="Rtable Rtable--4cols">
+
+  <div class="Rtable-cell"><a href="/courses/{{ course.id }}">{{ course.name }} </a></div>
+  <div class="Rtable-cell">  {{ course.date }}</div>
+  <div class="Rtable-cell">    <a href="/courses/{{ course.id }}/edit">Edit</a></div>
+  <div class="Rtable-cell"><strong>    <form action="/courses/{{ course.id }}/delete" method="POST">
+    <input type="submit" value="Delete">
+</form>
+</strong></div>
+
 
 </section>
-
-</div>
-</div></div>
-</div>
-
-
-
 
 
 {% endfor %}
