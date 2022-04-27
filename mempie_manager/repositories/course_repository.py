@@ -1,6 +1,8 @@
 from db.run_sql import run_sql
 from models.member import Member
 from models.course import Course
+from models.booking import Booking
+import repositories.booking_repository as booking_repository
 
 def save(course):
     sql = "INSERT INTO courses (name, date, times, duration, age_range, capacity, location, description) VALUES (%s, %s, %s, %s, %s, %s, %s, %s) RETURNING id"
@@ -42,7 +44,7 @@ def delete(id):
 
 def update(course):
     sql = "UPDATE courses SET (name, date, times, duration, age_range, capacity, location, description) = (%s, %s, %s, %s, %s, %s, %s, %s) WHERE id = %s"
-    values = [course.name, course.date, course.times, course.duration, course.age_range, course.capacity, course.location, course.description]
+    values = [course.name, course.date, course.times, course.duration, course.age_range, course.capacity, course.location, course.description, course.id]
     run_sql(sql, values)
 
 

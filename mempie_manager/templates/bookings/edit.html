@@ -4,16 +4,17 @@
 <h2>Update a Booking</h2>
 
 <form action="/bookings/{{ booking.id }}" id="booking_form" method="POST">
-    <div>
+    
         <label for="member">Member:</label>
         <select name="member_id" id="member">
             {% for member in members %}
-            <option value="{{ member.id }}" {% if member.id == booking.member.id %} selected {% endif %}>
+            <option value="{{ member.id }}" 
+        {% if member.id == booking.member.id %} selected {% endif %}>
                 {{ member.first_name }} {{ member.last_name }}
             </option>
             {% endfor %}
         </select>
-    </div>
+    
 
     <label for="child_first_name">First name:</label>
     <input type="text" id="child_first_name" name="child_first_name" value="{{ booking.child_first_name }}">
@@ -23,7 +24,7 @@
             </option>
             {% endfor %}
         </select>
-    </div>
+   
     <label for="child_last_name">Last name:</label>
     <input type="text" id="child_last_name" name="child_last_name" value="{{ booking.child_last_name }}">
             {% for booking in bookings %}
@@ -32,7 +33,7 @@
             </option>
             {% endfor %}
         </select>
-    </div>
+   
     <label for="child_age">Age:</label>
     <input type="number" id="child_age" name="child_age" value="{{ booking.child_age }}">
             {% for booking in bookings %}
@@ -41,7 +42,7 @@
             </option>
             {% endfor %}
         </select>
-    </div>
+    
     <label for="special_requirements">Special Requirements:</label>
 
     <textarea name="special_requirements" cols="40" rows="5" form="booking_form" id="special_requirements" >{{ booking.special_requirements }}</textarea>
@@ -53,11 +54,9 @@
             </option>
             {% endfor %}
         </select>
-    </div>
 
 
 
-    <div>
         <label for="course">Course:</label>
         <select name="course_id" id="course">
             {% for course in courses %}
@@ -66,27 +65,9 @@
             </option>
             {% endfor %}
         </select>
-    </div>
-    <div>
+  
         <input type="submit" value="Save">
-    </div>
+  
 </form>
 
 {% endblock %}
-
-
-<!-- <div>
-    <label for="first_name">First name:</label>
-    <input type="text" id="first_name" name="first_name" value="{{ member.first_name }}">
-
-    <label for="last_name">Last name:</label>
-    <input type="text" id="last_name" name="last_name" value="{{ member.last_name }}">
-
-    <label for="phone">Phone number:</label>
-    <input type="text" id="phone" name="phone" value="{{ member.phone_number}}">
-
-    <label for="email">Email:</label>
-    <input type="text" id="email" name="email" value="{{ member.email}}">
-
-
-    <input type="submit"> -->

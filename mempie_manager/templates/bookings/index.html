@@ -2,16 +2,30 @@
 {% block content %}
 
 <h2>Bookings</h2>
+<li><a href="/bookings/new">Add</a></li>
 
 {% for booking in bookings %}
 
-<section>
-    <p>{{ booking.course.name }} </p>
-    <p>{{ booking.member.first_name }} {{ booking.member.last_name }}</p>
-    <a href="/bookings/{{ booking.id }}/edit">Edit</a>
-    <form action="/bookings/{{ booking.id }}/delete" method="POST">
+
+<section class="course-grid">
+
+<div class="Rtable Rtable--4cols">
+
+    <div class="Rtable-cell">
+        {{ booking.course.name }}
+    </div>
+    <div class="Rtable-cell">
+        {{ booking.member.first_name }} {{ booking.member.last_name }}
+    </div>
+    <div class="Rtable-cell">    
+        <a href="/bookings/{{ booking.id }}/edit">Edit</a>
+    </div>
+    <div class="Rtable-cell"> 
+        <form action="/bookings/{{ booking.id }}/delete" method="POST">
         <input type="submit" value="Delete">
-    </form>
+        </form>
+    </div>
+
 </section>
 
 {% endfor %}

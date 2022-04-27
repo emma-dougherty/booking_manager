@@ -3,35 +3,34 @@
 
 <h2>Update a Course</h2>
 
+<div class="input-wrapper">
+
 <form action="/courses/{{ course.id }}" id="course_form" method="POST">
-    <div>
+
         <label for="name">Name:</label>
-        <input type="text" id="name" name="name" value="{{ course.name }}">
+        <input type="text" id="name" name="name" value={{course.name}}>
 
         <label for="date">Date:</label>
-        <input type="text" id="date" name="date" value="{{ course.date }}">
+        <input type="text" id="date" name="date" value={{course.date}}>
 
         <label for="times">Times:</label>
-        <input type="text" id="times" name="times" value="{{ course.times }}">
+        <input type="text" id="times" name="times" value={{course.times}}>
 
         <label for="duration">Duration:</label>
-        <input type="text" id="duration" name="duration" value="{{ course.duration }}">
+        <input type="text" id="duration" name="duration" value={{course.duration}}>
 
         <label for="age_range">Age Range:</label>
-        <input type="text" id="age_range" name="age_range" value="{{ course.age_range }}">
+        <input type="text" id="age_range" name="age_range" value={{course.age_range}}>
 
         <label for="location">Location:</label>
-        <input type="text" id="location" name="location" value="{{ course.location }}">
+        <input type="text" id="location" name="location" value={{course.location}}>
         
         <label for="description">Description:</label>
-
-        <textarea name="description" form="course_form" cols="40" rows="5" id="description" placeholder="{{ course.description }}"></textarea>
-
-
-
+        <input type="text" id="description" name="description" value={{course.description}}>
 
         <input type="submit">
-    </div>
-</form>
+
+    </form>
+</div>
 
 {% endblock %}

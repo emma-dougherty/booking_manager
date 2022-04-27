@@ -42,3 +42,34 @@
     </form>
 </section>
 
+
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Bookings</h2>
+
+{% for booking in bookings %}
+
+<section>
+    <p>{{ booking.course.name }} </p>
+    <p>{{ booking.member.first_name }} {{ booking.member.last_name }}</p>
+    <a href="/bookings/{{ booking.id }}/edit">Edit</a>
+    <form action="/bookings/{{ booking.id }}/delete" method="POST">
+        <input type="submit" value="Delete">
+    </form>
+</section>
+
+{% endfor %}
+{% endblock %}
+
+<ul>
+    {% for member in booked_members %}
+    <li>{{ member.first_name }} {{member.last_name }}</li>
+    <p>Children</p>
+        {% for booking in course_bookings %} 
+            {% if booking.member.id == member.id %}
+            {{ booking.child_first_name }}  {{booking.child_last_name}}
+            {% endif %}
+        {% endfor %}
+    {% endfor %}
+</ul>
