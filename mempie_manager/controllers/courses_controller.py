@@ -23,13 +23,8 @@ def show_course(id):
     booked_members = course_repository.select_members_booked_on_course(id)
     number_booked = course_repository.number_booked(id)
     course = course_repository.select(id)
-    all_bookings = booking_repository.select_all()
-    course_bookings = []
-    for booking in all_bookings:
-        if booking.course.id == int(id):
-            course_bookings.append(booking)
-    print(course_bookings)
-    return render_template("courses/show.html", booked_members=booked_members, number_booked=number_booked, course=course, course_bookings=course_bookings)
+
+    return render_template("courses/show.html", booked_members=booked_members, number_booked=number_booked, course=course)
 
 
 # NEW
@@ -69,9 +64,10 @@ def update_course(id):
     times = request.form["times"]
     duration = request.form["duration"]
     age_range = request.form["age_range"]
+    capacity = request.form["capacity"]
     location = request.form["location"]
     description = request.form["description"]
-    course = Course(name, date, times, duration, age_range, location, description, id)
+    course = Course(name, date, times, duration, age_range, capacity, location, description, id)
     course_repository.update(course)
     return redirect("/courses")
 

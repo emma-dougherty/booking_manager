@@ -17,23 +17,38 @@
 <h3>Bookings</h3>
 
 <ul>
-    {% for member in booked_members %}
-
+    {% for booking in booked_members %}
+        {% if loop.index ==1 %}
+            Parent: {{ booking.member.first_name }} 
+    
+            {{booking.member.last_name }} 
+        {% endif %}
     <div class="Rtable Rtable--4cols">
 
         <div class="Rtable-cell"> 
 
-    {{ member.first_name }} {{member.last_name }}
+    Child: 
+  
+    {{booking.child_first_name}}
+    {{booking.child_last_name}}
+
+    {% for item in list if item.author == 'bob' %}
+    
+{% endfor %}
     </div>
 
-    <p>Children</p>
+    <!-- <p>Children</p>
     <div class="Rtable-cell"> 
         {% for booking in course_bookings %} 
             {% if booking.member.id == member.id %}
+
+
+            
             {{ booking.child_first_name }}  {{booking.child_last_name}}
+        
             {% endif %}
         {% endfor %}
-    </div>
+    </div> -->
 </div>
     
     {% endfor %}
