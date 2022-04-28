@@ -1,10 +1,9 @@
 {% extends "base.html" %}
+{% set active_page = "index" %}
 {% block content %}
 
 <div class="top-title-add">
 <h1>Courses</h1>
-<div class="space"></div>
-<a href="/courses/new"> <button class="add-button">NEW</button></a>
 
 </div>
 
@@ -30,14 +29,14 @@
 
   <div class="Rtable-cell">
     <a href="/courses/{{ course.id }}/edit"><i class="fa fa-edit fa-2x" style="color:#949494" aria-hidden="true"></i></a>
-   
+
 </div>
 
 
 <div class="Rtable-cell"> 
   <form class = "delete-form" action = "/courses/{{ course.id }}/delete" method = "POST">
   <button class="trash-button">
-      <i class="fa fa-trash-o fa-2x"  style="color:#949494" aria-hidden="true"></i>
+      <i class="fa fa-trash-o fa-2x"  style="color:#ffb2e8" aria-hidden="true"></i>
   </button>
   </form>
 </div>

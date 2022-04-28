@@ -1,14 +1,40 @@
 {% extends "base.html" %}
 {% block content %}
 
-<div class="home-add">
-           
-    <a href="/courses/new"> <button class="add-button">NEW COURSE</button></a>
-    </div>
 
-<div id="home-bg">
-    <img src="{{ url_for('static', filename = 'p&p_bg.png') }}" >
+
+<!-- <div id="home-bg"> -->
+<div class="home-landing2">
+    <div class="home-landing2-inner1"><img src="{{ url_for('static', filename = 'p&p_bg.png') }}" class="responsive-img"></div>
+    
+<div class="home-landing2-inner2">
+    <h1>Latest Bookings</h1>
+    {% for booking in bookings %}
+
+
+    <section class="course-grid">
+    
+    <div class="Rtable Rtable--3cols">
+    
+        <div class="Rtable-cell">
+            {{ booking.course.name }}
+        </div>
+
+        <div class="Rtable-cell">
+            {{ booking.member.first_name }} {{ booking.member.last_name }}
+        </div>
+    
+        <div class="Rtable-cell">
+            <strong>{{ booking.child_first_name }}</strong> {{ booking.child_age }}
+        </div>
+    
+    </section>
+    
+    {% endfor %}
+
 </div>
+</div>
+
 
 
 {% endblock %}
