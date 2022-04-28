@@ -5,23 +5,69 @@
 
 <div class="input-wrapper">
 
-<form action="/members/{{ member.id }}" id="members_form" method="POST">
-
+    <div class="container">
+        <form action="/members/{{ member.id }}" id="members_form" method="POST">
+    <div class="row">   
+    <div class="col-25">
         <label for="first_name">First name:</label>
-        <input type="text" id="first_name" name="first_name" value={{member.first_name}}> 
-
-        <label for="last_name">Last name:</label>
-        <input type="text" id="last_name" name="last_name" value={{member.last_name}}>
-
-        <label for="phone">Phone number:</label>
-        <input type="text" id="phone" name="phone" value={{member.phone_number}}>
-
-        <label for="email">Email:</label>
-        <input type="text" id="email" name="email" value={{member.email}}>
-
-        <input type="submit" value="save">
-
     </div>
-</form>
+    <div class="col-75">
+        <input type="text" id="first_name" name="first_name" value={{member.first_name}}> 
+    </div>
+    </div>
+    <div class="row">
+    <div class="col-25">
+        <label for="last_name">Last name:</label>
+    </div>
+    <div class="col-75">
+        <input type="text" id="last_name" name="last_name" value={{member.last_name}}>
+    </div>
+    </div>
+    <div class="row">
+    <div class="col-25">
+        <label for="phone">Phone number:</label>
+    </div>
+    <div class="col-75">
+        <input type="text" id="phone" name="phone" value={{member.phone_number}}>
+    </div>
+    </div>
+    <div class="row">
+    <div class="col-25">
+        <label for="email">Email:</label>
+        </div>
+    <div class="col-75">
+        <input type="text" id="email" name="email" value={{member.email}}>
+    </div>
+    </div>
+    <div class="row">
+        <input type="submit" value="Save">
+    </div>
+    </form>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 {% endblock %}
