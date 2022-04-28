@@ -37,6 +37,9 @@ header a {
     padding: 1em;
     margin: 20px; 
     position: relative;
+    width: auto;
+    height: auto;
+    
     /* width: 100%;
     height: auto;
     left: 0;
@@ -71,6 +74,19 @@ header a {
 }
 .home-landing2-inner2 {
     width: 40%;
+}
+
+.bg-img {
+    background-image: url(../static/SMG-tbg.jpg);
+    background-repeat: no-repeat;
+    background-attachment: local;
+    background-position: right;
+    background-size: cover;
+    display: block; 
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    min-height: 650px;
 }
 
 .add-button {
@@ -482,11 +498,11 @@ a:active {
     text-decoration: none;
 }
 
-#trash-btn:hover {
-color:#bd3f3f
+.input-wrapper {
+    display: flex;
+    flex-direction: column;
 }
-
-
+/* ################################################################ */
 .form {
     display: flex;
     flex-wrap: wrap;
@@ -543,6 +559,11 @@ label {
     padding-left: 10px;
 }
 
+/* ################################################################ */ 
+
+
+
+
 hr.dotted {
     border-top: 1px dashed rgb(195, 195, 195);
 }
@@ -551,7 +572,7 @@ hr.dotted {
     display: flex;
     flex-direction: row;
     justify-content: start;
-    padding-left:50px;
+    padding-left:20px;
     padding-bottom: 20px;;
 }
 

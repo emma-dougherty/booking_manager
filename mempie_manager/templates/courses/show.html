@@ -9,34 +9,20 @@
     </span>  
         {{course.age_range}}</h3>
         {{number_booked}} / {{course.capacity}}
-        <p>{{course.description}}
-        </p>
-    
+        <p>{{course.description}}   </p>
     </span>
 
 <h3>Bookings</h3>
-
 <ul>
     {% for booking in booked_members %}
         {% if loop.index ==1 %}
-            Parent: {{ booking.member.first_name }} 
-    
-            {{booking.member.last_name }} 
+            Parent: {{ booking.member.first_name }} {{booking.member.last_name }} 
         {% endif %}
-    <div class="Rtable Rtable--4cols">
-
-        <div class="Rtable-cell"> 
-
-    Child: 
-  
-    {{booking.child_first_name}}
-    {{booking.child_last_name}}
-
-    {% for item in list if item.author == 'bob' %}
+    <div class="Rtable Rtable--2cols">
+    <div class="Rtable-cell"> 
+            Child: 
+    {{booking.child_first_name}} {{booking.child_last_name}}
     
-{% endfor %}
-    </div>
-
     <!-- <p>Children</p>
     <div class="Rtable-cell"> 
         {% for booking in course_bookings %} 
@@ -47,8 +33,8 @@
             {{ booking.child_first_name }}  {{booking.child_last_name}}
         
             {% endif %}
-        {% endfor %}
-    </div> -->
+        {% endfor %} -->
+    </div>
 </div>
     
     {% endfor %}

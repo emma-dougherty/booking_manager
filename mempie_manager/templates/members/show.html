@@ -1,6 +1,9 @@
 {% extends "base.html" %}
 {% block content %}
 
+
+
+<div class="bg-img">
 <h2>{{ member.first_name }} {{ member.last_name }}</h2>
     
 
@@ -13,5 +16,28 @@
     <li> {{course.name}}, {{course.date}} </li>
     {% endfor %}
 </ul>
+
+
+</div>
+
+<ul>
+{% for booking in booked_members %}
+{% if loop.index ==1 %}
+    Parent: {{ booking.member.first_name }} {{booking.member.last_name }} 
+{% endif %}
+<div class="Rtable Rtable--2cols">
+<div class="Rtable-cell"> 
+    Child: 
+{{booking.child_first_name}} {{booking.child_last_name}}
+
+
+
+
+
+{% endfor %}
+</ul>
+
+
+
 
 {% endblock %}  
