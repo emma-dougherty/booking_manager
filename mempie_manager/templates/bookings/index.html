@@ -1,8 +1,13 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h2>Bookings</h2>
-<li><a href="/bookings/new">Add</a></li>
+
+<div class="top-title-add">
+    <h1>Bookings</h1>
+    <div class="space"></div>
+    <a href="/bookings/new"> <button class="add-button">NEW</button></a>
+</div>
+
 
 {% for booking in bookings %}
 
@@ -13,19 +18,31 @@
 
     <div class="Rtable-cell">
         {{ booking.course.name }}
+        <hr class="dotted">
     </div>
     <div class="Rtable-cell">
         {{ booking.member.first_name }} {{ booking.member.last_name }}
+        <hr class="dotted">
     </div>
+
+    <div class="Rtable-cell">
+        <strong>{{ booking.child_first_name }}</strong> {{ booking.child_age }}
+        <hr class="dotted">
+    </div>
+
     <div class="Rtable-cell">    
         <a href="/bookings/{{ booking.id }}/edit">Edit</a>
     </div>
+
+
+
     <div class="Rtable-cell"> 
-        <form action="/bookings/{{ booking.id }}/delete" method="POST">
-        <input type="submit" value="Delete">
+        <form class = "delete-form" action = "/bookings/{{ booking.id }}/delete" method = "POST">
+        <button class="trash-button">
+            <i class="fa fa-trash-o fa-2x" style="color:#ffb2e8" style="font-size:24px" aria-hidden="true"></i>
+        </button>
         </form>
     </div>
-
 </section>
 
 {% endfor %}

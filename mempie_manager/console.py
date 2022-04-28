@@ -11,7 +11,7 @@ booking_repository.delete_all()
 member_repository.delete_all()
 course_repository.delete_all()
 
-course1 = Course("Great British Summer", "8 - 10 August", "10am-3pm", "3 days", "8-12 yrs", 3, "Studio 1", "Ice lollies, Mr Whippy, beach games, water sports... This workshop packs all the best bits of summer into two days of stop motion animation fun!")
+course1 = Course("Great Scottish Summer", "8 - 10 August", "10am-3pm", "3 days", "8-12 yrs", 3, "Studio 1", "Ice lollies, Mr Whippy, beach games, water sports... This workshop packs all the best bits of summer into two days of stop motion animation fun!")
 course_repository.save(course1)
 
 course2 = Course("Pixilation Picnic", "11 - 12 August", "10am-3pm", "2 days", "8-12 yrs", 3, "Studio 1", "Animating food is lots of fun (edible props!). At this workshop you will make a picnic as if by magic! We will also be using people as puppets, together with a huge assortment of funny costumes and props, to make pixilation films.")

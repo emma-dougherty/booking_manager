@@ -1,8 +1,13 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h2>Members</h2>
-<li><a href="/members/new">Add</a></li>
+
+<div class="top-title-add">
+    <h1>Members</h1>
+    <div class="space"></div>
+    <a href="/members/new"> <button class="add-button">NEW</button></a>
+</div>
+
 
 {% for member in members %}
 
@@ -12,19 +17,25 @@
 
     <div class="Rtable-cell"> 
         <a href="/members/{{ member.id }}">{{ member.first_name }} {{ member.last_name }}</a>
+        <hr class="dotted">
     </div>
     <div class="Rtable-cell"> 
-        {{ member.phone_number }} {{ member.email }} 
+        {{ member.phone_number }} 
+        <hr class="dotted">
     </div>
-
+    <div class="Rtable-cell"> 
+        {{ member.email }} 
+        <hr class="dotted">
+    </div>
     <div class="Rtable-cell">
         <a href="/members/{{ member.id }}/edit"><i class="fa fa-edit fa-2x" style="color:#949494" aria-hidden="true"></i></a>
+        
     </div>
 
     <div class="Rtable-cell"> 
         <form class = "delete-form" action = "/members/{{ member.id }}/delete" method = "POST">
         <button class="trash-button">
-            <i class="fa fa-trash-o fa-2x" style="color:#949494" aria-hidden="true"></i>
+            <i class="fa fa-trash-o fa-2x" style="color:#ffb2e8" style="font-size:24px" aria-hidden="true"></i>
         </button>
         </form>
 

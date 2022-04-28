@@ -1,56 +1,14 @@
 {% extends "base.html" %}
 {% block content %}
 
+<div class="home-add">
+           
+    <a href="/courses/new"> <button class="add-button">NEW COURSE</button></a>
+    </div>
 
-
-<div class="circle-grid">
-    <div class="anim-object active" id="circle-object" style="animation: 1.1s ease-in 0s 1 normal both running bounce-in-top;"></div>
-    <br/>
-
-    <div class="anim-object active" id="circle-object" style="animation: 1.1s ease-in 0.2s 1 normal both running bounce-in-top;"></div>
-    <br/>
-
-    <div class="anim-object active" id="circle-object" style="animation: 1.1s ease-in 0.4s 1 normal both running bounce-in-top;"></div>
-
-    <br/>
-    
-    <div class="anim-object active" id="circle-object" style="animation: 1.1s ease-in 0.6s 1 normal both running bounce-in-top;"></div>
-
-    <br/>
-    
-    <div class="anim-object active" id="circle-object" style="animation: 1.1s ease-in 0.8s 1 normal both running bounce-in-top;"></div>
-
-    <br/>
-    
-    <div class="anim-object active" id="circle-object" style="animation: 1.1s ease-in 1s 1 normal both running bounce-in-top;"></div> <br/>
-    
-    <div class="anim-object active" id="circle-object" style="animation: 1.1s ease-in 1.2s 1 normal both running bounce-in-top;"></div>
+<div id="home-bg">
+    <img src="{{ url_for('static', filename = 'p&p_bg.png') }}" >
 </div>
 
-<div class="circle-grid">
-    <div class="anim-object active" id="circle-object" style="animation: 1.1s ease-in 1s 1 normal both running bounce-in-top;"></div>
-    <br/>
-
-    <div class="anim-object active" id="circle-object" style="animation: 1.1s ease-in 1.2s 1 normal both running bounce-in-top;"></div>
-    <br/>
-
-    <div class="anim-object active" id="circle-object" style="animation: 1.1s ease-in 1.4s 1 normal both running bounce-in-top;"></div>
-
-    <br/>
-    
-    <div class="anim-object active" id="circle-object" style="animation: 1.1s ease-in 1.6s 1 normal both running bounce-in-top;"></div>
-
-    <br/>
-    
-    <div class="anim-object active" id="circle-object" style="animation: 1.1s ease-in 1.8s 1 normal both running bounce-in-top;"></div>
-
-    <br/>
-    
-    <div class="anim-object active" id="circle-object" style="animation: 1.1s ease-in 2s 1 normal both running bounce-in-top;"></div> <br/>
-    
-    <div class="anim-object active" id="circle-object" style="animation: 1.1s ease-in 2.2s 1 normal both running bounce-in-top;"></div>
-</div>
-
-<hr class="separator separator--dotter" />
 
 {% endblock %}
