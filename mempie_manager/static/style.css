@@ -52,75 +52,30 @@ header a {
 .home-landing > div {
     width: 100px;
     margin-right: 80px;
-    /* padding-right: 10px; */
     margin-top:20px;
     text-align: center;
-    /* line-height: 75px;
-    font-size: 30px; */
-    /* display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    width: 100px;
-    margin: 10px;
-    line-height: 75px;
-    padding-left: 800px; */
-    /* padding-right:  10px; */
-    /* 
-    margin-bottom: 200px; */
 }
-.home-img {
-    /* -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover; */
-}
+
 .responsive-img {
     width: 100%;
     height: auto;
 }
 
-
 .home-landing2 {
     display: flex;
     flex-wrap: nowrap;
-    
-    /* justify-content: space-evenly; */
 }
+
 .home-landing2-inner1 {
     width: 80%;
-    /* text-align: center;
-    flex-grow: inherit; */
 }
 .home-landing2-inner2 {
     width: 40%;
-    padding-top: 100px;
-    padding-right: 40px;
-    /* text-align: center;
-    flex-grow: inherit; */
 }
-/* .square {
-    position: relative;
-    width: 50%;
-    color:rgb(0, 0, 0)
-  }
-  
-  .square:after {
-    content: "";
-    display: block;
-    padding-bottom: 100%;
-  }
-  
-  .content {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-  } */
 
 .add-button {
     background-color:#ffb2e8;
 	border-radius:42px;
-	/* border:3px solid #000000; */
 	display:flex;
 	cursor:pointer;
 	color:#000000;
@@ -133,7 +88,6 @@ header a {
 .add-button:hover {    
     background-color:#ff8edd;
 	border-radius:42px;
-	/* border:3px solid #000000; */
 	display:flex;
 	cursor:pointer;
 	color:#000000;
@@ -148,7 +102,6 @@ header a {
 	top:1px;
 }
 
-
 .space{
     padding-left: 20px;
 }
@@ -156,7 +109,6 @@ header a {
 .add-button2 {
     background-color:#ffdd00;
 	border-radius:42px;
-	/* border:3px solid #000000; */
 	display:flex;
 	cursor:pointer;
 	color:#000000;
@@ -168,7 +120,6 @@ header a {
 }
 .add-button2:hover {    background-color:#ffc400;
 	border-radius:42px;
-	/* border:3px solid #000000; */
 	display:flex;
 	cursor:pointer;
 	color:#000000;
@@ -185,7 +136,6 @@ header a {
 .add-button3 {
     background-color:#2CBE67;
 	border-radius:42px;
-	/* border:3px solid #000000; */
 	display:flex;
 	cursor:pointer;
 	color:#000000;
@@ -197,7 +147,6 @@ header a {
 }
 .add-button3:hover {    background-color:#1aaa53;
 	border-radius:42px;
-	/* border:3px solid #000000; */
 	display:flex;
 	cursor:pointer;
 	color:#000000;
@@ -210,10 +159,6 @@ header a {
 .add-button3:active {
 	position:relative;
 	top:1px;}
-
-/* .space-below {
-    padding-bottom: 200px;
-} */
 
 li {
     list-style: none;
@@ -231,7 +176,10 @@ a {
 }
 
 .smg-logo {
-    /* width: 40%; */
+    display: flex;
+    flex-direction: end;
+    width: auto;
+    height: 100%;
     display: inline-block;  
     padding-top: 10px;
     /* width: auto;
@@ -317,8 +265,6 @@ a {
     padding: 0.5em ;
     overflow: hidden;
     list-style: none;
-    /* border: solid rgb(243, 243, 243); */
-    > h1, > h2, > h3, > h4, > h5, > h6 { margin: 0; }
 }
 
 .Rtable--2cols > .Rtable-cell  { width: 50%; }
@@ -539,7 +485,6 @@ a:active {
 #trash-btn:hover {
 color:#bd3f3f
 }
-
 
 
 .form {
