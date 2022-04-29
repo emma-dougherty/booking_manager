@@ -40,13 +40,7 @@ header a {
     width: auto;
     height: auto;
     margin-bottom: 100px;
-    
-    /* width: 100%;
-    height: auto;
-    left: 0;
-    box-shadow: 4px 4px 0px rgba(147, 147, 147, 0.81);  */
 }
-
 
 .home-landing {
     display: flex;
@@ -193,16 +187,10 @@ a {
 }
 
 .smg-logo {
-    display: flex;
-    flex-direction: end;
-    width: auto;
-    height: 100%;
-    display: inline-block;  
-    padding-top: 10px;
-    /* width: auto;
-    height: auto;
-    
-    margin: 0% 0 0 2%; */
+    display: inline-block;      
+    max-width: 200px;
+    max-height: 100%;
+    margin: 0% 0 0 2%; 
 }
 
 .menu {
@@ -626,7 +614,7 @@ hr.dotted {
     color: #2CBE67;
     text-align: center;
 }
-/* ############## */
+/* PARALLAX EXPERIEMENT */
 .background-word-cloud {
     background-image: url('/static/word-cloud.jpg');
     background-size: 100%;
