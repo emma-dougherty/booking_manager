@@ -16,5 +16,9 @@ app.register_blueprint(home_blueprint)
 def main():
     return render_template('index.html')
 
+@app.route("/mempie")
+def mempie():
+    return render_template('mempie.html')
+
 if __name__ == '__main__':
     app.run()

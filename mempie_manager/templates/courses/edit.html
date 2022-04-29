@@ -5,35 +5,77 @@
 
 <div class="input-wrapper">
 
-<form action="/courses/{{ course.id }}" id="course_form" method="POST">
+<div class="container">
+    <form action="/courses/{{ course.id }}" id="course_form" method="POST">
+        <div class="row">
+        <div class="col-25">
+            <label for="name">Name:</label>
+        </div>
+        <div class="col-75">
+            <input type="text" id="name" name="name" value={{course.name}}>
+        </div>
+        </div>
+        <div class="row">
+        <div class="col-25">
+            <label for="date">Date:</label>
+        </div>
+        <div class="col-75">
+            <input type="text" id="date" name="date" value={{course.date}}>
+        </div>
+        </div>
+        <div class="row">
+        <div class="col-25">
+            <label for="name">Times:</label>
+        </div>
+        <div class="col-75">
+            <input type="text" id="times" name="times" value={{course.times}}>
+        </div>
+        </div>
+        <div class="row">
+        <div class="col-25">
+            <label for="duration">Duration:</label>
+        </div>
+        <div class="col-75">
+            <input type="text" id="duration" name="duration" value={{course.duration}}>
+        </div>
+        </div>
+        <div class="row">
+        <div class="col-25">
+            <label for="age_range">Age Range:</label>
+        </div>
+        <div class="col-75">
+            <input type="text" id="age_range" name="age_range" value={{course.age_range}}>
+        </div>
+        </div>
+        <div class="row">
+        <div class="col-25">
+            <label for="capacity">Capacity:</label>
+        </div>
+        <div class="col-75">
+            <input type="text" id="capacity" name="capacity" value={{course.capacity}}>
+        </div>
+        </div>
+        <div class="row">
+        <div class="col-25">
+            <label for="location">Location:</label>
+        </div>
+        <div class="col-75">
+            <input type="text" id="location" name="location" value={{course.location}}>
+        </div>
+        </div>
+        <div class="row">
+        <div class="col-25">
+            <label for="location">Description:</label>
+        </div>
+        <div class="col-75">
+            <textarea id="description" name="description" form="course_form" style="height:100px"></textarea>
+        </div>
+        </div>
 
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" value={{course.name}}>
-
-        <label for="date">Date:</label>
-        <input type="text" id="date" name="date" value={{course.date}}>
-
-        <label for="times">Times:</label>
-        <input type="text" id="times" name="times" value={{course.times}}>
-
-        <label for="duration">Duration:</label>
-        <input type="text" id="duration" name="duration" value={{course.duration}}>
-
-        <label for="age_range">Age Range:</label>
-        <input type="text" id="age_range" name="age_range" value={{course.age_range}}>
-
-        <label for="capacity">Capacity:</label>
-        <input type="text" id="capacity" name="capacity" value={{course.capacity}}>
-
-        <label for="location">Location:</label>
-        <input type="text" id="location" name="location" value={{course.location}}>
-        
-        <label for="description">Description:</label>
-        <input type="text" id="description" name="description" value={{course.description}}>
-
-        <input type="submit" value="save">
-
+        <div class="row">
+        <input type="submit" value="Submit">
+        </div>
     </form>
-</div>
+    </div>
 
 {% endblock %}
